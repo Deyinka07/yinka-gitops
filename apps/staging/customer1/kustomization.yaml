@@ -1,0 +1,15 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../base/customer1/
+patches:
+  - target:
+      kind: SecretProviderClass
+      name: customer1-secrets
+    patch: |-
+      - op: replace
+        path: /spec/parameters/userAssignedIdentityID
+        value: "284b704f-1434-4734-a1d0-b1ef0635ea01"
+      - op: replace
+        path: /spec/parameters/tenantId
+        value: "dd6bc44b-1f3c-4109-a358-9f8b2fe420c9"
