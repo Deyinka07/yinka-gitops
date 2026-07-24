@@ -13,3 +13,10 @@ patches:
       - op: replace
         path: /spec/parameters/tenantId
         value: "dd6bc44b-1f3c-4109-a358-9f8b2fe420c9"
+  - target:
+      kind: ObjectStore
+      name: customer1-objectstore
+    patch: |-
+      - op: replace
+        path: /spec/configuration/destinationPath
+        value: "https://yinkabackupsstaging.blob.core.windows.net/customer1"
